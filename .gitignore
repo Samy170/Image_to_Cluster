@@ -1,0 +1,14 @@
+# Packer / Docker artefacts
+packer_*.zip
+Builds/
+custom-nginx.docker.nginx*
+
+# Temporary / local folders
+Wait/
+
+# Python / Ansible
+__pycache__/
+*.retry
+
+# OS
+.DS_Store

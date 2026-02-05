@@ -1,0 +1,25 @@
+- name: Deploy custom nginx on k3d
+  hosts: localhost
+  gather_facts: false
+  vars:
+    project_dir: /workspaces/Image_to_Cluster
+
+  tasks:
+    - name: Ensure namespace exists
+      command: kubectl create namespace web
+      register: ns
+      failed_when: ns.rc != 0 and "AlreadyExists" not in ns.stderr
+      changed_when: ns.rc == 0
+
+    - name: Apply deployment
+      command: kubectl apply -f ansible/k8s/deployment.yml
+      args:
+        chdir: "{{ project_dir }}"
+
+    - name: Apply service
+      command: kubectl apply -f ansible/k8s/service.yml
+      args:
+        chdir: "{{ project_dir }}"
+
+    - name: Wait for rollout
+      command: kubectl -n web rollout status deployment/web --timeout=120s
