@@ -3,9 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <title>Image to Cluster</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 520px;
+    }
+    h1 { margin: 0; color: #2c3e50; }
+    .pipeline { margin: 1.5rem 0; font-weight: 500; color: #555; }
+    .author { margin-top: 2rem; font-size: 0.9rem; color: #777; }
+    .author span { font-weight: 600; color: #000; }
+  </style>
 </head>
 <body>
-  <h1>✅ Deployed on K3d</h1>
-  <p>Packer → custom image → K3d → Ansible → Kubernetes</p>
+  <div class="container">
+    <h1>🚀 Deployed on K3d</h1>
+    <div class="pipeline">Packer → Custom Image → K3d → Ansible → Kubernetes</div>
+    <div class="author">Made by <span>Samy</span></div>
+  </div>
 </body>
 </html>
