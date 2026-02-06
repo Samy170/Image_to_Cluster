@@ -188,6 +188,7 @@ ansible --version
 
 2️ Créer les manifests Kubernetes
 Deployment
+deployment.yml
 
 ```bash
 mkdir -p ansible/k8s
@@ -218,7 +219,7 @@ spec:
 ```
 
 
-Service
+service.yml
 
 ```yaml
 apiVersion: v1
@@ -237,7 +238,7 @@ spec:
 ```
 
 3️ Créer le playbook Ansible
-
+deploy.yml
 ```yaml
 - name: Deploy custom nginx on k3d
   hosts: localhost
